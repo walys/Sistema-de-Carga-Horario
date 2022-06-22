@@ -1,0 +1,48 @@
+
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Extenções</title>
+</head>
+<body>
+<p>
+	<h1>Link: https://www.yiiframework.com/extension/yii2-br-validator<h1>
+		<br/>
+		Either run
+		<br/>
+		php composer.phar require --prefer-dist yiibr/yii2-br-validator "*"
+		<br/>
+		or add
+		<br/>
+		"yiibr/yii2-br-validator": "*"
+		<br/>
+		use leandrogehlen\brvalidator\CpfValidator;
+		use leandrogehlen\brvalidator\CnpjValidator;
+		<br/>
+		public $name;
+		public $cpf;
+		public $cnpj;
+		<br/>
+		/**
+		 * @return array the validation rules.
+		 */
+		 <br/>
+			public function rules()
+			{
+				return [
+					// name is required
+					['name', 'required'],
+					// cpf validator
+					['cpf', CpfValidator::className()],
+					// cnpj validator
+					['cnpj', CnpjValidator::className()],
+				];
+			}
+		<br/>
+
+</p>
+</body>
+</html>
+

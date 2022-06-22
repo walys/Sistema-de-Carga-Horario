@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SELECT 2 KARTIK</title>
+</head>
+<body>
+	<p>
+	Installation via Composer is the recommended and most easy option to install Krajee Yii2 extensions. You can install yii2-widget-select2 via composer package manager. Either run:
+	</p>
+
+	<p>Copy</p>
+	<p>$ php composer.phar require kartik-v/yii2-widget-select2 "dev-master"</p>
+	<p>or add:</p>
+	<p>Copy</p>
+	<p>"kartik-v/yii2-widget-select2": "dev-master"</p>
+
+	<?= $form->field($model, 'nucleo_id')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(Nucleo::find()
+                ->orderBy('nome')
+                ->all(), 
+            'id', 'nome'),
+            'language' => 'pt',
+            'options' => ['placeholder' => 'Selecione um núcleo ...'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]);
+    ?>
+	
+</body>
+</html>

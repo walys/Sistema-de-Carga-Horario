@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Documentação do Projeto</title>
+</head>
+<body>
+	<!-- Link referencia : https://github.com/CleianeOliveira/ProjecaoCargaHoraria -->
+	<h1>Micration</h1>
+	<p>NUCLEO (id, nome, create_at, úpdate_at)</p>
+	<p>USUARIO (id, nome, login, senha, nucleo_id, create_at, úpdate_at)</p>
+	<p>CURSO (id, nome, ch_total, q_pediodo, sigla, create_at, úpdate_at)</p>
+	<p>MATRIZ (id, sigla, ch_total, curso_id, create_at, úpdate_at)</p>
+	<p>DISCIPLINA (id, nome, ch, periodo, nucleo_id, matriz_id, create_at, úpdate_at)</p>
+	<p>OFERTA (ID, SEMESTRE_INICIO, MATRIZ_id, USUARIO_FK, DATA_REGISTRO, create_at, úpdate_at)</p>
+	<p>DETALHEOFERTA (id, anosemestre, disciplina_fk, oferta_fk, create_at, úpdate_at)
+	</p>
+	<p>CORDENA (id, usuario_fk, inicio, fim, create_at, úpdate_at)</p>
+	<p>DOCENTE (id, nome, nucleo_id, create_at, úpdate_at)</p>
+
+	<h2>Comandos para criar Migrate</h2>
+	<h2>OBS: Crie uma de cada vez e vá submetendo ao banco por vez assim que finalizar de migrar</h2>
+
+	<b>php yii migrate/create create_nucleo_table</b>
+	<br/>
+	<b>php yii migrate/create create_usuario_table</b>
+	<br/>
+	<b>php yii migrate/create create_curso_table</b>
+	<br/>
+	<b>php yii migrate/create create_matriz_table</b>
+	<br/>
+	<b>php yii migrate/create create_disciplina_table</b>
+	<br/>
+	<b>php yii migrate/create create_oferta_table</b>
+	<br/>
+	<b>php yii migrate/create create_detalheoferta_table</b>
+	<br/>
+	<b>php yii migrate/create create_coordena_table</b>
+	<br/>
+	<b>php yii migrate/create create_docente_table</b>
+	<br/>
+
+
+	<h2>Submeter as migrates para o banco</h2>
+
+	<b>php yii migrate</b>
+
+	<h2>Alteração na tabela de usuario para deixar o campo login como unico</h2>
+	<b> php yii migrate/create "unique"</b>
+	<br/>
+	<b> php yii migrate</b>
+</body>
+</html>
+
+
